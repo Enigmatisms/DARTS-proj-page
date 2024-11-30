@@ -50,11 +50,15 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-        adjustImageBoxHeight();
+      var iframe = document.getElementById("interactiveIframe");
+      var iframeDoc = iframe.contentWindow.document;
+      adjustIframeHeight(iframe, iframeDoc);
     });
 
     window.onload = function() {
-        adjustImageBoxHeight();
+      var iframe = document.getElementById("interactiveIframe");
+      var iframeDoc = iframe.contentWindow.document;
+      adjustIframeHeight(iframe, iframeDoc);
     };
 </script>
 </head>
@@ -75,7 +79,7 @@
                 <a href="https://github.com/Enigmatisms" target="_blank">Qianyue He</a>,</span>
                 <span class="author-block">
                   <a href="https://dongyu-du.github.io/" target="_blank">Dongyu Du</a>,</span>
-                  <span class="author-block">Haitian Jiang</span>
+                  <span class="author-block">Haitian Jiang,</span>
                   <span class="author-block">
                     <a href="https://scholar.google.com.hk/citations?user=FTikW50AAAAJ&hl=zh-CN&oi=sra" target="_blank">Xin Jin</a><sup>*</sup>
                   </span>
@@ -308,7 +312,9 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>
+      To this work, you can use the following BibTex code:
+      <pre>
+        <code>
         @article{he2024darts,
           title={DARTS: Diffusion Approximated Residual Time Sampling for Time-of-flight Rendering in Homogeneous Scattering Media},
           author={He, Qianyue and Du, Dongyu and Jiang, Haitian and Jin, Xin},
