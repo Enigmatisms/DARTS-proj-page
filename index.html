@@ -43,8 +43,12 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/ImageBox.js"></script>
+  <script src="static/js/CopyrightBox.js"></script>
+  <script src="static/js/imbox_util.js"></script>
 </head>
-<body>
+<body onload="setup();post_content();">
 
 
   <section class="hero">
@@ -52,28 +56,31 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">🎯 DARTS: Diffusion Approximated Residual Time Sampling for 
+              Time-of-flight Rendering in Homogeneous Scattering Media
+              </h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://github.com/Enigmatisms" target="_blank">Qianyue He</a>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://dongyu-du.github.io/" target="_blank">Dongyu Du</a>,</span>
+                  <span class="author-block">Haitian Jiang</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://scholar.google.com.hk/citations?user=FTikW50AAAAJ&hl=zh-CN&oi=sra" target="_blank">Xin Jin</a><sup>*</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">Tsinghua Shenzhen International Graduate School<br>ACM Transactions on Graphics (SIGGRAPH Asia 2024 Journal Track)</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Corresponding Author</small></span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://search.ads.xyz/?api=perf&sub1=memphdggpanlfjpkigbhjpfhfjkeaebh&q=darts%3A+diffusion+approximated+residual+time+sampling+for+time-of-flight+rendering+in+homogeneous+scattering+media" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -81,21 +88,11 @@
                         <span>Paper</span>
                       </a>
                     </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
                   </span>
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/Enigmatisms/DARTS" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -106,7 +103,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/2402.03106" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -129,11 +126,11 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/fast-forward.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Fast forward show-casing of our DARTS method. We present a simple alphabet scene, with different BSDFs for the geometries and thin homogeneous scattering medium. Rendering outputs and FLIP loss results are given, side-by-side.
       </h2>
     </div>
   </div>
@@ -148,7 +145,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Time-of-flight (ToF) devices have greatly propelled the advancement of various multi-modal perception applications. However, achieving accurate rendering of time-resolved information remains a challenge, particularly in scenes involving complex geometries, diverse materials and participating media. Existing ToF rendering works have demonstrated notable results, yet they struggle with scenes involving scattering media and camera-warped settings. Other steady-state volumetric rendering methods exhibit significant bias or variance when directly applied to ToF rendering tasks. To address these challenges, we integrate transient diffusion theory into path construction and propose novel sampling methods for free-path distance and scattering direction, via resampled importance sampling and offline tabulation. An elliptical sampling method is further adapted to provide controllable vertex connection satisfying any required photon traversal time. In contrast to the existing temporal uniform sampling strategy, our method is the first to consider the contribution of transient radiance to importance-sample the full path, and thus enables improved temporal path construction under multiple scattering settings. The proposed method can be integrated into both path tracing and photon-based frameworks, delivering significant improvements in quality and efficiency with at least a 5x MSE reduction versus SOTA methods in equal rendering time. 
           </p>
         </div>
       </div>
@@ -165,30 +162,30 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/dragon-short-packed.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          (Dragon time point 1). Time-gated rendering experiments. For each scene, we present the time-gated images rendered by five different methods (organized by column) in two different time intervals (shorter and longer target path lengths). Each image will have two selected areas displayed in magnified views.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/dragon-long-packed.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          (Dragon time point 2). For original and the proposed methods, we use 6k SPP to render each image and the photon based methods have rendering time equal to the proposed method. We set the MSE of our DARTS PT to be 1, and MSE relative ratios and rendering time are displayed on the top right of each image.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/staircase-short-packed.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
+          (Staircase time point 1). The best statistics (row-wise) are highlighted in red. The leftmost texts describe the time point and the corresponding interval center of the rendered images. The original outputs are in HDR format, we therefore normalize the images with their 0.99 quantiles and clamp the output to [0, 1].
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <img src="static/images/staircase-long-packed.jpg" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        (Staircase time point 2). It can be seen that our DARTS PT (4th Image) and DARTS photon points (5th column) methods have greatly improved rendering quality. Notably, photon points equipped with DARTS can achieve noise-free rendering with no obvious visual artifacts.
       </h2>
     </div>
   </div>
@@ -197,7 +194,15 @@
 </section>
 <!-- End image carousel -->
 
-
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Interactive Comparison</h2>
+      <!-- <div class="interactiveContent" id="interactiveContent"></div> -->
+      <iframe id="interactiveIframe" class="interactiveIframe" src="about:blank" style="width: 100%; border: none;"></iframe>
+  </div>
+</section>
 
 
 <!-- Youtube video -->
@@ -211,7 +216,7 @@
           
           <div class="publication-video">
             <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/watch?v=aOQPA7ccOtY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -225,26 +230,26 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
+      <h2 class="title is-3">Other Videos</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
             <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
+            <source src="static/videos/dining-room-1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
             <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
+            <source src="static/videos/dining-room-2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
             <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
+            <source src="static/videos/dining-room-3.mp4"
             type="video/mp4">
           </video>
         </div>
@@ -255,19 +260,14 @@
 <!-- End video carousel -->
 
 
-
-
-
-
 <!-- Paper poster -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Poster</h2>
+      <h2 class="title">Supplementary Documents</h2>
 
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+      <iframe  src="static/pdfs/supp-note-final.pdf" width="100%" height="550">
           </iframe>
-        
       </div>
     </div>
   </section>
@@ -278,7 +278,18 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>
+        @article{he2024darts,
+          title={DARTS: Diffusion Approximated Residual Time Sampling for Time-of-flight Rendering in Homogeneous Scattering Media},
+          author={He, Qianyue and Du, Dongyu and Jiang, Haitian and Jin, Xin},
+          journal={ACM Transactions on Graphics (TOG)},
+          volume={43},
+          number={6},
+          pages={1--14},
+          year={2024},
+          publisher={ACM New York, NY, USA}
+        }
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
