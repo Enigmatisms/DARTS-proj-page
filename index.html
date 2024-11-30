@@ -47,6 +47,16 @@
   <script src="static/js/ImageBox.js"></script>
   <script src="static/js/CopyrightBox.js"></script>
   <script src="static/js/imbox_util.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        adjustImageBoxHeight();
+    });
+
+    window.onload = function() {
+        adjustImageBoxHeight();
+    };
+</script>
 </head>
 <body onload="setup();post_content();">
 
@@ -153,6 +163,26 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Method Overview: Mixed Video-Image Finetuning</h2>
+          <center>
+          <img src="static/images/flow-chart.png" alt="Method Flow Chart" class="center-image blend-img-background"/>
+          </center>
+          <div class="level-set has-text-justified">
+            <p>
+              In this paper, we propose a diffusion approximated residual time sampling method (DARTS, for short), which provides full transient path construction and effective vertex connection within complex volumetric scenes and under camera-warped settings. To address the challenge of constructing effective temporal sampling paths in scattering media, instead of adopting uniform sampling in the time domain, which overlooks the radiance contribution differences of different path samples, we perform importance sampling on the transient radiance by integrating the transient diffusion approximation (DA) into the rendering process. This approach allows us to obtain improved free-path distance and direction samples with enhanced overall radiance, leading to better convergence performance. To impose path time constraints, we extend the ellipsoidal connection method and further combine it with the proposed DA-based direction sampling to bypass challenges introduced by the reparameterization of ellipsoidal connection and avoid sampling inefficiency in camera-warped settings. The proposed method is inherently unbiased and introduces negligible extra memory overhead compared to the naive methods. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- Image carousel -->
