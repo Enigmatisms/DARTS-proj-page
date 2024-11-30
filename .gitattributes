@@ -1,4 +1,0 @@
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-*.pdf filter=lfs diff=lfs merge=lfs -text
-pdfs/supp-note-final.pdf filter=lfs diff=lfs merge=lfs -text
-videos/*.mp4 filter=lfs diff=lfs merge=lfs -text
